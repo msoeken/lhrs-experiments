@@ -21,3 +21,13 @@ class Database:
     def insert_entry(self, benchmark, method, configuration, synthesis, circuit):
         self.db.insert({'benchmark': benchmark, 'method': method, 'configuration': configuration,
                         'synthesis': synthesis, 'circuit': circuit})
+
+    def get_main_statistics(self, benchmark, method, configuration):
+        if isinstance(benchmark, str):
+            if not self.has_entry(benchmark, method, configuration):
+                return None, None, None
+            
+            entry = self.get_entry(benchmark, method, configuration)
+            return int(entry["circuit"]["qubits"]), int(entry["circuit"]["tcount"]), entry["synthesis"]["runtime"]
+        else:
+            return [self.get_main_statistics(b, method, configuration) for b in benchmark]
