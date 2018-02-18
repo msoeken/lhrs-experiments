@@ -23,8 +23,14 @@ def dxs(filename, configuration):
 
 def cbs(filename, configuration):
     revkit.read_aiger(filename = filename)
+    num_outputs = revkit.ps(aig = True, silent = True)["outputs"]
+
     synthesis = revkit.cbs(**configuration).dict()
+
+    # update costs for Qubits and T-count for Bennett trick
     circuit = revkit.ps(circuit = True, silent = True).dict()
+    circuit["qubits"] += num_outputs
+    circuit["tcount"] *= 2
 
     revkit.store(clear = True, aig = True, circuit = True)
 
@@ -41,9 +47,12 @@ def hdbs(filename, configuration):
     end = timer()
     synthesis["runtime"] = end - start
 
+    # update costs for Qubits and T-count for Bennett trick
     circuit = revkit.ps(circuit = True, silent = True).dict()
     circuit["qubits"] += num_outputs
     circuit["tcount"] *= 2
+
+    revkit.store(clear = True, aig = True, circuit = True, bdd = True)
 
     return synthesis, circuit
 
