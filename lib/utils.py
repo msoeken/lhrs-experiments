@@ -1,7 +1,9 @@
 import numpy as np
 
 def thousand_sep(number):
-    if isinstance(number, int) or isinstance(number, np.int64):
+    if number == None:
+        return ""
+    elif isinstance(number, int) or isinstance(number, np.int64):
         return '{:,}'.format(number)
     elif isinstance(number, float):
         return '{:,.2f}'.format(number)
