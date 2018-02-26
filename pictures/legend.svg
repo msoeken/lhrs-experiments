@@ -1,0 +1,25 @@
+<svg version="1.1" baseProfile="full" width="830" height="40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="8" style="fill: #0000ff" />
+    <text x="20" y="14" font-size="18" text-anchor="start">LHRS (Pareto optimal)</text>
+
+    <circle cx="208" cy="8" r="8" style="fill: #ff0000" />
+    <text x="220" y="14" font-size="18" text-anchor="start">CBS (Pareto optimal)</text>
+
+    <circle cx="408" cy="8" r="8" style="fill: #ff9900" />
+    <text x="420" y="14" font-size="18" text-anchor="start">DXS (Pareto optimal)</text>
+
+    <circle cx="608" cy="8" r="8" style="fill: #009900" />
+    <text x="620" y="14" font-size="18" text-anchor="start">BDD-based (Pareto optimal)</text>
+
+    <circle cx="8" cy="33" r="4" style="fill: #0000ff; opacity: 0.3" />
+    <text x="20" y="39" font-size="18" text-anchor="start">LHRS</text>
+
+    <circle cx="208" cy="33" r="4" style="fill: #ff0000; opacity: 0.3" />
+    <text x="220" y="39" font-size="18" text-anchor="start">CBS</text>
+
+    <circle cx="408" cy="33" r="4" style="fill: #ff9900; opacity: 0.3" />
+    <text x="420" y="39" font-size="18" text-anchor="start">DXS</text>
+
+    <circle cx="608" cy="33" r="4" style="fill: #009900; opacity: 0.3" />
+    <text x="620" y="39" font-size="18" text-anchor="start">BDD-based</text>
+</svg>
